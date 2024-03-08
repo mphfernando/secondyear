@@ -1,0 +1,1000 @@
+Question 1 –Basic output
+Write Text‐Based Application using Object‐Oriented Approach to display your name.
+
+```java
+package question1;
+
+public class Name {
+    String name;
+    
+    public Name()
+    {
+        
+    }
+    
+    public Name(String x)
+    {
+        name=x;
+    }
+    
+    public void display()
+    {
+        System.out.println("My name is " +name);
+    }
+}
+```
+
+```java
+package question1;
+
+public class Question1 {
+
+    public static void main(String[] args) 
+    {
+       Name p1= new Name();
+       p1=new Name("Pabashi");
+       p1.display();
+    }
+    
+}
+```
+
+Question 2
+
+Question 2 – Input & output I
+Write a program that input, calculates and prints the product of three integers
+
+```java
+package question2;
+
+import java.util.Scanner;
+
+public class Question2 {
+
+    public static void main(String[] args) {
+       int no1,no2,no3,product;
+       Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the 1st number- ");
+       no1=sc.nextInt();
+       System.out.println("Enter the 2nd number- ");
+       no2=sc.nextInt();
+       System.out.println("Enter the 3rd number- ");
+       no3=sc.nextInt();
+       product=no1*no2*no3;
+        System.out.println("The product is - "+product);
+    }
+    
+}
+```
+
+Question 3 – Input & output II
+Write a program that converts a Fahrenheit degree to Celsius using the formula (input values):
+
+Celsius=5/9(farenheit-32)
+
+```java
+package question3;
+import java.util.Scanner;
+
+public class Question3 {
+
+    public static void main(String[] args) {
+        double c,f;
+        Scanner fc =new Scanner(System.in);
+        System.out.println("Enter the farenheit value- ");
+        f=fc.nextDouble();
+        c=(5.0/9.0)*(f-32.0);
+        System.out.println("Farenheit value is "+c);
+        
+    }
+    
+}
+```
+
+Question 4 – If condition
+Write an application that inputs three integers from the user and displays the sum, average,
+product, smallest and largest of the numbers.
+
+```java
+package question4;
+
+import java.util.Scanner;
+
+public class Question4 {
+
+    public static void main(String[] args) {
+        int no1,no2,no3,product,sum,smallest,largest;
+        float avg;
+       Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the 1st number- ");
+       no1=sc.nextInt();
+       System.out.println("Enter the 2nd number- ");
+       no2=sc.nextInt();
+       System.out.println("Enter the 3rd number- ");
+       no3=sc.nextInt();
+       sum=no1+no2+no3;
+       avg=(float)sum/3;
+       product=no1*no2*no3;
+       
+       largest=smallest=no1;
+       if(no2>largest&&no2>no3)
+           largest=no2;
+       else
+           if(no3>largest&&no3>no2)
+               largest=no3;
+       if(no2<smallest&&no2<no3)
+           smallest=no2;
+       else
+           if(no3<smallest&&no3<no2)
+               smallest=no3;
+       
+        System.out.println("The sum is "+sum);
+        System.out.println("the average is "+avg);
+        
+       
+        System.out.println("The product is - "+product
+        );
+        System.out.println("The largest number is "+largest);
+        System.out.println("The smallest number is "+smallest);
+    }
+    
+}
+```
+
+Question 5 - Loops
+Write a Java application that allows the user to enter up to 20 integer grades into an array. Stop
+the loop by typing in ‐1. Your main method should call an Average method that returns the
+average of the grades. Use the DecimalFormat class to format the average to 2 decimal places
+
+Question 6 - OOP
+Create a class called Date that includes three pieces of information as instance variables—a
+month (typeint), a day (typeint) and a year (typeint). Your class should have a constructor that
+initializes the three instance variables and assumes that the values provided are correct.
+Provide a set and a get method for each instance variable. Provide a method displayDate that
+displays the month, day and year separated by forward slashes(/). Write a test application
+named DateTest that demonstrates classDate’s capabilities.
+
+```java
+package question6;
+
+import java.util.Scanner;
+
+public class Question6 {
+
+    public static void main(String[] args) {
+        
+        
+        Date d1=new Date(6,23,2023);
+        d1.setday(23);
+        d1.setmonth(6);
+        d1.setyear(2023);
+        System.out.println(d1.getday());
+        System.out.println(d1.getmonth());
+        System.out.println(d1.getyear());
+        d1.display();
+    }
+    
+}
+```
+
+```java
+package question6;
+
+public class Date {
+    int month,day,year;
+    
+    public Date(int a,int b,int c)
+    {
+        month=a;
+        day=b;
+        year=c;
+    }
+    
+    public void setmonth(int a)
+    {
+       month=a; 
+    }
+    
+    public void setday(int b)
+    {
+        day=b;
+    }
+    
+    public void setyear(int c)
+    {
+        year=c;
+    }
+    
+    public int getmonth()
+    {
+        return month;
+    }
+    
+    public int getday()
+    {
+        return day;
+    }
+    
+    public int getyear()
+    {
+        return year;
+    }
+    
+    public void display()
+    {
+        
+        System.out.println(month+"/"+day+"/"+year);
+    }
+}
+```
+
+Question 7 -Inheritance
+Create a new class called ‘Item’ with two protected instance variables (private variables), an
+integer variable called ‘location’, and a String variable called ‘description’.
+Add a constructor method for the Item class that takes an integer and a String as arguments (in
+that order). The constructor should assign the value of these parameters to the corresponding
+instance variables. Add getter and setter methods for the location and description variables. Add
+another class called Monster and make the Monster class a sub-class of the Item class. Add a
+constructor method to the Monster class that takes an integer and a String argument just like the
+Item class constructor.
+Use these arguments to call the Item super class constructor from within the Monster class
+constructor so that the instance variables in the superclass are instantiated correctly.Write a
+suitable main method in a different class and call all the methods.
+
+```java
+package question.pkg7;
+
+public class Question7 {
+
+    public static void main(String[] args) {
+       Item i1= new Item(1,"Item number 1");
+        System.out.println("location - "+i1.getloc());
+        System.out.println("Item description - "+i1.getdes());
+        i1.setloc(8);
+        i1.setdes("Under process");
+        System.out.println("location - "+i1.getloc());
+        System.out.println("Item description - "+i1.getdes());
+        
+        Monster m1= new Monster(3,"monster 1");
+        System.out.println("location - "+m1.getloc());
+        System.out.println("Item description - "+m1.getdes());
+        
+        
+    }
+    
+}
+```
+
+```java
+package question.pkg7;
+
+public class Item {
+    private int location; 
+    private String description;
+    
+    public Item(int l,String d)
+    {
+       location=l;
+       description=d;
+    }
+    
+    public void setloc(int l)
+            //same  variable eke constructor setter dekatm dnn oned?
+    {
+        location=l;
+    }
+    
+    public void setdes(String d)
+    {
+        description=d;
+    }
+    
+    public int getloc()
+    {
+        return location;
+    }
+    
+    public String getdes()
+    {
+        return description;
+    }
+}
+```
+
+```java
+package question.pkg7;
+
+public class Monster extends Item {
+   
+    public Monster(int l, String d) {
+        super(l, d);
+    }
+   
+}
+```
+
+Question 8 - Static
+Create class SavingsAccount. Use a static variable annualInterestRate to store the annual interest
+rate for all account holders. Each object of the class contains a private instance variable
+savingsBalance indicating the amount the saver currently has ondeposit. Provide method
+calculateMonthlyInterest to calculate the monthly interest by multiplying the savingsBalance by
+annualInterestRate divided by 12 this interest should be added to savingsBalance. Provide a static
+method modifyInterestRate that sets the annualInterestRate to a new value.
+Write a program to test class SavingsAccount. Instantiate two savingsAccount objects, saver1 and
+saver2, with balances of $2000.00 and $3000.00, respectively. Set annualInterestRate to 4%, then
+calculate the monthly interest and print the new balances for both savers. Then set the
+annualInterestRate to 5%, calculate the next month’s interest and print the new balances for both
+savers.
+
+Question 9 -Inheritance
+Create a super class called Car. The Car class has the following fields and methods.
+◦int speed;
+◦double regularPrice;
+◦String color;
+◦double getSalePrice();
+◦
+Create a sub class of Car class and name it as Truck. The Truck class has the following fields and
+methods.
+int weight;
+◦double getSalePrice();//Ifweight>2000,10%discount.Otherwise,20%discount.
+Create a subclass of Car class and name it as Ford. The Ford class has the following fields and
+methods
+pg. 3
+◦int year;
+◦int manufacturerDiscount;
+◦double
+getSalePrice();//FromthesalepricecomputedfromCarclass,subtractthemanufacturerD
+iscount.
+Create a subclass of Car class and name it as Sedan. The Sedan class has the following fields and
+methods.
+◦int length;
+◦double getSalePrice();//Iflength>20feet,5%discount,Otherwise,10%discount.
+Create MyOwnAutoShop class which contains the main() method. Perform the following within
+the main() method
+Create an instance of Sedan class and initialize all the fields with appropriate values. Use
+super(...) method in the constructor for initializing the fields of the superclass.
+Create two instances of the Ford class and initialize all the fields with appropriate values. Use
+super(...) method in the constructor for initializing the fields of the super class.Create an instance
+of Car class and initialize all the fields with appropriate values. Display the sale prices of all
+instance
+
+```java
+package myownautoshopq9;
+
+public class MyOwnAutoShopQ9 {
+
+    public static void main(String[] args) {
+        Sedan s1=new Sedan(100,100000,"white",25);
+        System.out.println("price of sedan-"+s1.getSalePrice());
+        
+        Ford f1=new Ford(200,300000,"whitw",2001,5000);
+        System.out.println("price of f1="+f1.getSalePrice());
+        Ford f2=new Ford(300,40000,"black",2003,6000);
+        System.out.println("price of f2="+f2.getSalePrice());
+        
+        Car c1=new Car(300,50000,"pink");
+        System.out.println("price of the car "+c1.getSaleprice());
+        
+    }
+    
+}
+```
+
+```java
+package myownautoshopq9;
+
+public class Car {
+    int speed;
+    double regularprice;
+    String color;
+    
+    public Car(int speed,double regularprice,String color)
+    {
+        this.speed=speed;
+        this.regularprice=regularprice;
+        this.color=color;
+    }
+    public double getSaleprice()
+    {
+        return regularprice;
+    }
+    
+}
+```
+
+```java
+package myownautoshopq9;
+
+public class Ford extends Car{
+    int year;
+    int manufacturerDiscount;
+
+    public Ford(int speed, double regularprice, String color,int year,int manufacturerDiscount) {
+        super(speed, regularprice, color);
+        this.year=year;
+        this.manufacturerDiscount=manufacturerDiscount;
+        
+    }
+    
+    public double getSalePrice()
+    {
+        
+        double saleprice=super.getSaleprice();
+        saleprice=saleprice-(float)manufacturerDiscount;
+        return saleprice;
+    }
+            
+}
+```
+
+```java
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package myownautoshopq9;
+
+/**
+ *
+ * @author mphfe
+ */
+public class Sedan extends Car {
+    int lenght;
+
+    public Sedan(int speed, double regularprice, String color,int lenght) {
+        super(speed, regularprice, color);
+        this.lenght=lenght;
+    }
+    
+    public double getSalePrice()
+    {
+        double saleprice;
+        double discount;
+        if(lenght<20)
+            discount=0.05;
+        else
+            discount=0.1;
+        saleprice=regularprice-(regularprice*discount);
+        return saleprice;
+        
+    }
+}
+```
+
+```java
+package myownautoshopq9;
+
+public class Truck extends Car{
+    int weight;
+
+    public Truck(int speed, double regularprice, String color,int weight) {
+        super(speed, regularprice, color);
+        this.weight=weight;
+    }
+    
+    public double getSalePrice()
+    {
+        double discount;
+        if(weight>2000)
+          discount=0.1;
+        else
+            discount=0.2;
+         double saleprice;
+         saleprice=regularprice-regularprice*discount;
+        return saleprice;
+    }
+    
+    
+} 
+```
+
+Question 10 – abstract class and methods
+1.Write a program to create a class named shape. In this class we have three sub classes circle,
+triangle and square each class has two member function named draw () and erase (). Create these
+using polymorphism concepts.
+2.Write a program to give a simple example for abstract class.
+Write a program suppose, it isrequired to build a project consisting of a number of classes, possibly
+using a large number of programmers. It is necessary to make sure that every class from which all
+other classes in the project will be inherited. Since any new classes in the project must inherit
+from the base class, programmers are not free to create a different interface. Therefore, it can be
+guaranteed that all the classes in the project will respond to the same debugging commands.
+
+1
+
+```java
+package question10;
+
+public class Question10 {
+
+    public static void main(String[] args) {
+        Shape circle=new Circle();
+        Shape triangle = new Triangle();
+        Shape square = new Square();
+        
+        System.out.println(circle.Draw());
+        circle.erase();
+        triangle.Draw();
+        triangle.erase();
+        square.Draw();
+        square.erase();
+        
+    }
+    
+}
+```
+
+```java
+package question10;
+
+public abstract class Shape {
+    public abstract String Draw();
+    public abstract String erase();
+}
+```
+
+```java
+package question10;
+
+public class Circle extends Shape {
+    public String Draw()
+    {
+        return ("Use pencil");
+        
+    }
+    
+    public String erase()
+    {
+        return ("Erase when needed");
+    }
+}
+```
+
+```java
+package question10;
+
+public class Triangle extends Shape {
+    public String Draw()
+    {
+        return ("Use three lines to draw");
+    }
+    
+    public String erase()
+    {
+        return ("use eraser");
+    }
+
+}
+```
+
+```java
+package question10;
+
+public class Square extends Shape {
+
+    @Override
+    public String Draw() {
+        return "use only 4 lines";
+    }
+
+    @Override
+    public String erase() {
+         return "can  use eraser";
+    }
+    
+    
+}
+```
+
+2
+
+```java
+package abstract2;
+public class Abstract2 {
+
+    public static void main(String[] args) {
+       Animal d1=new Dog();
+        System.out.println("Dog d1 -");
+       d1.Sound();
+       d1.eat();
+       
+       Animal c1=new Cat();
+        System.out.println("Cat c1- ");
+       c1.Sound();
+       c1.eat();
+    }
+    
+}
+```
+
+```java
+package abstract2;
+
+public class Dog extends Animal{
+
+    @Override
+    void Sound() {
+        System.out.println("Bark");
+    }
+    
+
+    @Override
+    void eat() {
+        System.out.println("Meat");
+    }
+    
+}
+```
+
+```java
+package abstract2;
+
+abstract class Animal {
+    abstract void Sound();
+    abstract void eat();
+    
+   
+    
+}
+```
+
+```java
+package abstract2;
+
+public class Cat extends Animal{
+
+public void Sound()
+{
+    System.out.println("Meow");
+}
+
+    
+    void eat()
+    {
+        System.out.println("Fish"); 
+    }
+}
+```
+
+Question 11 - interface
+1.Write a program to create interface A in this interface we have two method meth1 and meth2.
+Implements this interface in another class named MyClass.
+pg. 4
+2.Write a program to give example for multiple inheritance in Java.
+3.Write a program to create interface named test. In this interface the member function is square.
+Implement this interface in arithmetic class.
+Create one new class called ToTestInt in this class use the object of arithmetic class.
+
+1
+
+```java
+package question11;
+
+public class Question11 {
+
+    public static void main(String[] args) {
+        MyClass c1=new MyClass();
+        c1.meth1();
+        c1.meth2();
+    }
+    
+}
+```
+
+```java
+package question11;
+
+public interface A {
+    public void meth1();
+    public void meth2();
+    
+}
+```
+
+```java
+package question11;
+
+public class MyClass implements A{
+
+    @Override
+    public void meth1() {
+        System.out.println("method1");
+    }
+
+    @Override
+    public void meth2() {
+        System.out.println("method2");
+    }
+    
+}
+```
+
+2.
+
+```java
+package interface2;
+
+public class Interface2 {
+
+    public static void main(String[] args) {
+        BankEmployee e1=new Managementtrainee();
+        e1.SalaryScale();
+        e1.Insurance();
+        e1.Leave();
+        
+        BankEmployee e2=new StaffAssistant();
+        e2.SalaryScale();
+        e2.Insurance();
+        e2.Leave();
+    }
+    
+}
+```
+
+```java
+package interface2;
+
+public interface BankEmployee {
+    public void SalaryScale();
+    public void Insurance();
+    public void Leave();
+}
+```
+
+```java
+package interface2;
+
+public class Managementtrainee implements BankEmployee {
+
+    @Override
+    public void SalaryScale() {
+       double Salary;
+       Salary=10000.00;
+        System.out.println("Salary is -"+Salary);
+    }
+
+    @Override
+    public void Insurance() {
+        System.out.println("Insurace Available");
+    }
+
+    @Override
+    public void Leave() {
+        System.out.println("Annual Leave and nopay leave available");
+    }
+    
+    
+}
+```
+
+```java
+package interface2;
+
+public class StaffAssistant implements BankEmployee {
+
+    @Override
+    public void SalaryScale() {
+        System.out.println("Salary = "+120000);
+    }
+
+    @Override
+    public void Insurance() {
+        System.out.println("Insurance Available");
+    }
+
+    @Override
+    public void Leave() {
+        System.out.println("All leave available");
+    }
+    
+}
+```
+
+3
+
+```java
+package totestint;
+
+public class ToTestInt {
+
+    public static void main(String[] args) {
+      test a1=new arothmetic();
+      a1.square();
+    }
+    
+}
+```
+
+```java
+package totestint;
+
+public interface test {
+    public void square();
+    
+    
+}
+```
+
+```java
+package totestint;
+
+public class arothmetic implements test{
+
+    @Override
+    public void square() {
+        System.out.println("Draw a Square");
+        int sidelenght=1;
+        int perimeter=4*sidelenght;
+        int area=sidelenght*sidelenght;
+        System.out.println("side lenght is "+sidelenght);
+        System.out.println("perimeter is "+perimeter);
+        System.out.println("Area is "+area);
+    }
+    
+}
+```
+
+Question 12 – Exception Handling
+1.Write a program for example of try and catch block. In this check whether the given array
+size is negative or not.
+2.Write a program for example of multiple catch statements occurring in a program.
+3.Write a program to illustrate sub class exception precedence over base class.
+4.Write a program to illustrate usage of try/catch with finally clause.
+Write a program to describe usage of throws clause.
+Write a program for creation of user defined exception
+
+1.
+
+```java
+package question12;
+
+import java.util.Scanner;
+
+public class Question12 {
+
+    public static void main(String[] args) {
+         Scanner sc=new Scanner(System.in);
+        try{
+           
+            int size;
+            System.out.print("Enter the size of the array: ");
+            size=sc.nextInt();
+            int arr[]=new int[size];
+            if(size<0)
+            System.out.println("size cannot be negative ");
+            else
+                System.out.println(size);
+            
+        }
+        catch(Exception e1)
+                {
+                    System.out.println("ERROR -"+e1.getMessage());
+                }
+        
+            
+        }
+    }
+```
+
+2.
+
+```java
+package q12.pkg2;
+
+import java.util.Scanner;
+
+public class Q122 {
+
+    public static void main(String[] args) {
+       
+
+         Scanner sc=new Scanner(System.in);
+        try{
+           
+            int size;
+            System.out.print("Enter the size of the array: ");
+            size=sc.nextInt();
+            int arr[]=new int[size];
+            if(size<0)
+            System.out.println("size cannot be negative ");
+            else
+                System.out.println(size);
+            System.out.println("Enter 1st number ");
+            int n1;
+            n1=sc.nextInt();
+            System.out.println("Enter 2nd number ");
+            int n2;
+            n2=sc.nextInt();
+            int result;
+            result=n1/n2;        
+            
+            if(n2==0)
+                System.out.println("Error cant divide by zero");
+            else
+                System.out.println(result);
+                
+        }
+        catch(ArithmeticException e1)
+                {
+                    System.out.println("ERROR -"+e1.getMessage());
+                }
+        
+        catch(Exception e2)
+        {
+            System.out.println("Error cant divide by zero="+e2.getMessage());
+        }
+    }
+}
+```
+
+Question 13 - Threads
+Write a program to illustrate creation of threads using runnable class.(start method start
+each of the newly created thread. Inside the run method there is sleep() for suspend the
+thread for 500 milliseconds).
+Write a program to create a class MyThread in this class a constructor, call the base class
+constructor, using super and starts the thread. The run method of the class starts after this.
+It can be observed that both main thread and created child thread are executed
+concurrently
+
+Question 14 – GUI I
+Design the following GUI and write required code for the conversion
+
+```java
+package question14;
+
+public class Question14 {
+
+    public static void main(String[] args) {
+        
+        GUIAPP1 g1=new GUIAPP1();
+        g1.show();
+    }
+    
+}
+```
+
+```java
+double farenheit,ans=0;
+ 
+            farenheit=Double.parseDouble(jTextField1.getText());
+            farenheight f1=new farenheight(farenheit);
+            
+             if(jRadioButton1.isSelected())
+            {
+                ans=f1.celcius();
+            }
+            
+            if(jRadioButton2.isSelected())
+            {
+                ans=f1.kelvin();
+            }
+            
+            jTextField2.setText(Double.toString(ans));
+```
+
+```java
+package question14;
+
+public class farenheight {
+    double farenheit,celcius,kelvin;
+    
+    public farenheight(double f)
+    {
+        farenheit=f;
+        celcius=0.0;
+        kelvin=0.0;
+    }
+    
+    public double celcius()
+    {
+        celcius=5.0/9.0*(farenheit-32.0);
+        return celcius;
+    }
+    
+    public double kelvin()
+    {
+        kelvin=(farenheit-32)/1.8+273.15;
+        return kelvin;
+    }
+}
+```
